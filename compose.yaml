@@ -1,0 +1,59 @@
+services:
+  php: &php
+    build:
+      context: ./.docker/php
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    command: bash
+    environment:
+      HOME: ${HOME}
+      COMPOSER_HOME: ${HOME}/.composer
+    volumes:
+      - ${HOME}/.ssh:${HOME}/.ssh:ro
+      - ${HOME}/.composer:${HOME}/.composer
+      - .docker/php/conf.d/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./:/app
+    networks:
+      - traefik_proxy
+
+  web:
+    <<: *php
+    command: apache2-foreground
+    ports:
+      - "8090:80"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.crux.rule=Host(`crux-local.com`)
+      - traefik.http.routers.crux.entrypoints=web
+      - traefik.http.services.crux.loadbalancer.server.port=80
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    networks:
+      - traefik_proxy
+
+  node:
+    image: node:24-bookworm-slim
+    working_dir: /app/web/app/themes/crux
+    volumes:
+      - ./:/app
+    networks:
+      - traefik_proxy
+
+volumes:
+  db-data:
+
+networks:
+  traefik_proxy:
+    external: true
