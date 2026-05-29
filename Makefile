@@ -28,10 +28,10 @@ composer-update: ## Composer update
 
 ## Frontend assets
 npm-install: ## Install npm dependencies
-	docker compose run --rm node npm i
+	docker compose run --rm node npm i $(args)
 
 npm-build: ## Build all assets
-	#docker compose run --rm node npm run dev
+	docker compose run --rm node npm run dev
 
 npm-watch: ## Watch all assets
 	docker compose run --rm node npm run watch

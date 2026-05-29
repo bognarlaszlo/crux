@@ -25,6 +25,10 @@ web/.htaccess
 /vendor
 auth.json
 
+# Frontend
+web/app/themes/crux/node_modules/
+web/app/themes/crux/public/build/
+
 # PHPUnit/Pest
 phpunit.xml
 .phpunit.result.cache
