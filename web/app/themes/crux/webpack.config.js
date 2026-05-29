@@ -6,6 +6,8 @@ Encore
 
   .addEntry('app', './assets/app.js')
 
+  .enableStimulusBridge('./assets/controllers.json')
+
   .configureCssLoader((options) => {
     options.url = false
   })
