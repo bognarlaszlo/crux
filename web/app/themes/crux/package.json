@@ -15,5 +15,8 @@
     "sass": "^1.100.0",
     "sass-loader": "^16.0.8",
     "webpack-notifier": "^1.15.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
   }
 }
