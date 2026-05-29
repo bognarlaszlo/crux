@@ -25,6 +25,11 @@
   },
   "repositories": [
     {
+      "name": "acf",
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    },
+    {
       "name": "wp-packages",
       "type": "composer",
       "url": "https://repo.wp-packages.org"
@@ -40,11 +45,16 @@
     "roots/wp-config": "^1.0",
     "timber/timber": "^2.4",
     "vlucas/phpdotenv": "^5.0",
-    "wp-theme/twentytwentyfive": "^1.0"
+    "wpengine/advanced-custom-fields-pro": "*"
   },
   "require-dev": {
     "laravel/pint": "^1.0",
     "pestphp/pest": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Crux\\": "web/app/themes/crux/src/"
+    }
   },
   "config": {
     "optimize-autoloader": true,
@@ -61,7 +71,8 @@
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
-        "type:wordpress-muplugin"
+        "type:wordpress-muplugin",
+        "wpengine/advanced-custom-fields-pro"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin"
