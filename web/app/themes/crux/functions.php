@@ -1,7 +1,11 @@
 <?php
 
+use Crux\Infrastructure\WordPress\Bootstrap;
+use Crux\Infrastructure\WordPress\PostTypes;
+use Crux\Infrastructure\WordPress\Theme;
+
 require_once dirname(__DIR__, 4) . '/vendor/autoload.php';
 
-require_once __DIR__ . '/src/wordpress.php';
-require_once __DIR__ . '/src/timber.php';
-require_once __DIR__ . '/src/post-types.php';
+Bootstrap::init();
+PostTypes::init();
+Theme::init();

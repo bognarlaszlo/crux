@@ -1,22 +1,22 @@
 <?php
 
-namespace Crux\ContentType;
+namespace Crux\Infrastructure\WordPress\ContentType;
 
-final class Publication extends AbstractContentType
+final class Board extends AbstractContentType
 {
-    public const string NAME = 'publication';
+    public const string NAME = 'board';
 
     public static function registerPostType(): void
     {
         register_post_type(self::NAME, [
             'labels' => array(
-                'name' => __('Közzététel', 'crux'),
-                'singular_name' => __('Közzétételek', 'crux'),
-                'menu_name' => __('Közzétételek', 'crux'),
+                'name' => __('Igazgatósági tagok', 'crux'),
+                'singular_name' => __('Igazgatósági tag', 'crux'),
+                'menu_name' => __('Igazgatóság', 'crux'),
             ),
             'public' => true,
             'show_in_rest' => false,
-            'menu_icon' => 'dashicons-media-document',
+            'menu_icon' => 'dashicons-groups',
             'supports' => [
                 'title',
                 'editor',
@@ -30,17 +30,15 @@ final class Publication extends AbstractContentType
     {
         return [
             [
-                'key' => 'crux_filed_group_publication',
-                'title' => 'Közzététel részletek',
+                'key' => 'crux_field_group_board',
+                'title' => 'Igazgatósái tag adatai',
                 'fields' => [
                     [
-                        'key' => 'crux_field_file',
-                        'label' => 'Dokumentum',
-                        'name' => 'file',
-                        'type' => 'file',
-                        'return_format' => 'url',
-                        'library' => 'uploadedTo',
-                        'mime_types' => 'pdf',
+                        'key' => 'crux_field_board_member_position',
+                        'label' => 'Titulus',
+                        'name' => 'board_member_position',
+                        'type' => 'text',
+                        'required' => 1,
                     ],
                 ],
                 'location' => [
@@ -52,9 +50,8 @@ final class Publication extends AbstractContentType
                         ],
                     ],
                 ],
-                'position' => 'side'
+                'position' => 'acf_after_title',
             ]
         ];
     }
 }
-

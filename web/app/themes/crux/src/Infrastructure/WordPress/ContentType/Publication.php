@@ -1,22 +1,22 @@
 <?php
 
-namespace Crux\ContentType;
+namespace Crux\Infrastructure\WordPress\ContentType;
 
-final class Board extends AbstractContentType
+final class Publication extends AbstractContentType
 {
-    public const string NAME = 'board';
+    public const string NAME = 'publication';
 
     public static function registerPostType(): void
     {
         register_post_type(self::NAME, [
             'labels' => array(
-                'name' => __('Igazgatósági tagok', 'crux'),
-                'singular_name' => __('Igazgatósági tag', 'crux'),
-                'menu_name' => __('Igazgatóság', 'crux'),
+                'name' => __('Közzététel', 'crux'),
+                'singular_name' => __('Közzétételek', 'crux'),
+                'menu_name' => __('Közzétételek', 'crux'),
             ),
             'public' => true,
             'show_in_rest' => false,
-            'menu_icon' => 'dashicons-groups',
+            'menu_icon' => 'dashicons-media-document',
             'supports' => [
                 'title',
                 'editor',
@@ -30,15 +30,17 @@ final class Board extends AbstractContentType
     {
         return [
             [
-                'key' => 'crux_field_group_board',
-                'title' => 'Igazgatósái tag adatai',
+                'key' => 'crux_filed_group_publication',
+                'title' => 'Közzététel részletek',
                 'fields' => [
                     [
-                        'key' => 'crux_field_board_member_position',
-                        'label' => 'Titulus',
-                        'name' => 'board_member_position',
-                        'type' => 'text',
-                        'required' => 1,
+                        'key' => 'crux_field_file',
+                        'label' => 'Dokumentum',
+                        'name' => 'file',
+                        'type' => 'file',
+                        'return_format' => 'url',
+                        'library' => 'uploadedTo',
+                        'mime_types' => 'pdf',
                     ],
                 ],
                 'location' => [
@@ -50,7 +52,7 @@ final class Board extends AbstractContentType
                         ],
                     ],
                 ],
-                'position' => 'acf_after_title',
+                'position' => 'side'
             ]
         ];
     }

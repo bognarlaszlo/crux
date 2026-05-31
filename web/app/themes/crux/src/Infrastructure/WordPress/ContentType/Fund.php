@@ -1,6 +1,6 @@
 <?php
 
-namespace Crux\ContentType;
+namespace Crux\Infrastructure\WordPress\ContentType;
 
 final class Fund extends AbstractContentType
 {
