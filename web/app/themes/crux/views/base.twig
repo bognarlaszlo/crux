@@ -3,14 +3,20 @@
 <head>
     <meta charset="{{ site.charset }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ encore_entry_link_tags('app') }}
-    {% block stylesheets %}{% endblock %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
     {{ function('wp_head') }}
 </head>
 <body {{ function('body_class') }}>
     {% block content %}{% endblock %}
-    {{ encore_entry_script_tags('app') }}
-    {% block javascripts %}{% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
     {{ function('wp_footer') }}
 </body>
 </html>
