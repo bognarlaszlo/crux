@@ -11,6 +11,7 @@ class Theme
     public static function init(): void
     {
         Timber::init();
+        Navigation::register();
 
         add_filter('timber/twig', [static::class, 'registerTwigExtensions']);
     }

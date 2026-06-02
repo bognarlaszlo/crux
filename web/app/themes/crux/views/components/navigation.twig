@@ -1,0 +1,13 @@
+{% if primary_menu %}
+    <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav">
+            {% for item in primary_menu.items %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ item.link }}">
+                        {{ item.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}
