@@ -9,6 +9,7 @@ final class Publication extends AbstractContentType
     public static function registerPostType(): void
     {
         register_post_type(self::NAME, [
+            'has_archive' => true,
             'labels' => array(
                 'name' => __('Közzététel', 'crux'),
                 'singular_name' => __('Közzétételek', 'crux'),

@@ -9,6 +9,7 @@ final class Fund extends AbstractContentType
     public static function registerPostType(): void
     {
         register_post_type(self::NAME, [
+            'has_archive' => true,
             'labels' => array(
                 'name' => __('Kezelt alapok', 'crux'),
                 'singular_name' => __('Kezelt alap', 'crux'),
