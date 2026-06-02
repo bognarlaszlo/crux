@@ -8,9 +8,6 @@ Encore
 
   .enableStimulusBridge('./assets/controllers.json')
 
-  // .configureCssLoader((options) => {
-  //   options.url = false
-  // })
   .enableSassLoader((options) => {
     options.sassOptions = {
       quietDeps: true,
