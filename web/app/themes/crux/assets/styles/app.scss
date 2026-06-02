@@ -1,2 +1,9 @@
 @import "fonts/Canela";
 @import "fonts/Inter";
+
+@import "base/bootstrap";
+
+.btn, .form-label {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}

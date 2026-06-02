@@ -1,0 +1,101 @@
+@use "sass:map";
+
+$prefix: bs-;
+
+// Color system
+$gray-200: #eeece7;
+$gray-300: #d6d4ce;
+$gray-400: #b5b4b2;
+$gray-500: #8c887f;
+$gray-900: #323232;
+
+$green-100: #dfe5db;
+$green-200: #d4e7e1;
+$green-800: #2d5a51;
+$green-900: #13423a;
+
+$primary:       $green-900;
+$secondary:     $gray-300;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 2,
+  5: $spacer * 3,
+);
+
+// Body
+$body-color:                  $gray-900;
+$body-bg:                     $gray-200;
+
+$body-secondary-color:        $gray-500;
+
+// Components
+$border-color:                $gray-400;
+$border-radius:               .625rem;
+
+// Typography
+$font-family-sans-serif:      "Inter", sans-serif;
+$font-family-serif:           "Canela", serif;
+
+$font-size-base:              1.125rem;   // 18px
+
+$font-size-md:                1rem;       // 16px
+$font-size-sm:                .875rem;    // 14px
+$font-size-xs:                .75rem;     // 12px
+$font-size-xxs:               .625rem;    // 10px
+
+$line-height-base:            1.75;
+$line-height-sm:              1.45;
+$line-height-xs:              1.3334;
+
+$h1-font-size:                3.375rem;   // 54px
+$h2-font-size:                2.625rem;   // 42px
+$h3-font-size:                2rem;       // 32px
+$h4-font-size:                1.75rem;    // 28px
+$h5-font-size:                1.5rem;     // 24px
+$h6-font-size:                1.25rem;    // 20px
+
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size,
+    7: $font-size-base,
+    8: $font-size-md,
+    9: $font-size-sm,
+    10: $font-size-xs,
+    11: $font-size-xxs,
+);
+
+$headings-font-family:        $font-family-serif;
+$headings-font-weight:        300;
+$headings-color:              $green-800;
+
+// Buttons + Forms
+$input-btn-padding-y:         1rem;
+$input-btn-padding-x:         1rem;
+$input-btn-font-family:       $font-family-sans-serif;
+$input-btn-font-size:         $font-size-base;
+$input-btn-line-height:       $line-height-xs;
+
+// Buttons
+$btn-padding-y:               $input-btn-padding-y;
+$btn-padding-x:               2.5rem;
+$btn-font-size:               $font-size-xs;
+
+$btn-font-weight:             600;
+
+$btn-border-radius:           var(--#{$prefix}border-radius-pill);
+
+// Forms
+$form-label-font-size:                  $font-size-xxs;
+$form-label-font-weight:                600;
+
+@import '~bootstrap/scss/variables';
