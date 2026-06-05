@@ -1,0 +1,4 @@
+// Content flow
+.prose > * + * {
+  margin-top: var(--prose-flow, 1em);
+}

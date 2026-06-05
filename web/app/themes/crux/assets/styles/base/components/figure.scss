@@ -1,0 +1,21 @@
+@use "sass:list";
+@use "sass:math";
+
+$figure-pattern-ratio: list.slash($figure-pattern-cols, $figure-pattern-rows);
+$figure-pattern-tile-size: math.percentage(math.div(1, $figure-pattern-cols));
+$figure-image-scale: math.div($figure-pattern-rows - 2, $figure-pattern-rows);
+
+.figure {
+  .figure-pattern {
+    aspect-ratio: $figure-pattern-ratio;
+
+    mask:
+      url('#{$public-images-url}/pattern-x.svg')
+      0 0 / #{$figure-pattern-tile-size}
+      repeat;
+
+    & ~ .figure-img {
+      scale: $figure-image-scale;
+    }
+  }
+}
