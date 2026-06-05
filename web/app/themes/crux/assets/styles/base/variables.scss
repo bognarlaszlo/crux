@@ -1,6 +1,7 @@
+@use "sass:list";
 @use "sass:map";
 
-$prefix: bs-;
+$public-images-url: '/app/themes/crux/public/images';
 
 // Color system
 $gray-200: #eeece7;
@@ -11,11 +12,18 @@ $gray-900: #323232;
 
 $green-100: #dfe5db;
 $green-200: #d4e7e1;
+$green-700: #5d847e;
 $green-800: #2d5a51;
 $green-900: #13423a;
 
 $primary:       $green-900;
 $secondary:     $gray-300;
+
+// Options
+$enable-negative-margins:     true;
+
+// Prefix for :root CSS variables
+$prefix: bs-;
 
 // Spacing
 $spacer: 1rem;
@@ -24,8 +32,9 @@ $spacers: (
   1: $spacer * .25,
   2: $spacer * .5,
   3: $spacer,
-  4: $spacer * 2,
-  5: $spacer * 3,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 3,
 );
 
 // Body
@@ -34,9 +43,25 @@ $body-bg:                     $gray-200;
 
 $body-secondary-color:        $gray-500;
 
+// Paragraphs
+$paragraph-margin-bottom:     0;
+
 // Components
 $border-color:                $gray-400;
 $border-radius:               .625rem;
+
+$border-radius-lg:            1.5rem;
+$border-radius-xl:            3rem;
+$border-radius-xxl:           4rem;
+
+$aspect-ratios-native: (
+  null: var(--#{$prefix}aspect-ratio),
+  "1x1": list.slash(1, 1),
+  "3x1": list.slash(3, 1),
+  "4x3": list.slash(4, 3),
+  "16x9": list.slash(16, 9),
+  "21x9": list.slash(21, 9)
+);
 
 // Typography
 $font-family-sans-serif:      "Inter", sans-serif;
@@ -74,9 +99,9 @@ $font-sizes: (
     11: $font-size-xxs,
 );
 
+$headings-margin-bottom:      0;
 $headings-font-family:        $font-family-serif;
 $headings-font-weight:        300;
-$headings-color:              $green-800;
 
 // Buttons + Forms
 $input-btn-padding-y:         1rem;
@@ -98,4 +123,26 @@ $btn-border-radius:           var(--#{$prefix}border-radius-pill);
 $form-label-font-size:                  $font-size-xxs;
 $form-label-font-weight:                600;
 
+// Navs
+
+// Navbar
+$navbar-nav-link-padding-x:         map.get($spacers, 4);
+
+$navbar-light-color:                $primary;
+$navbar-dark-color:                 $secondary;
+
+// Figures
+$figure-pattern-cols:               8;
+$figure-pattern-rows:               14;
+
 @import '~bootstrap/scss/variables';
+
+$theme-colors: map.merge($theme-colors, (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "green-100":  $green-100,
+  "green-200":  $green-200,
+  "green-700":  $green-700,
+  "green-800":  $green-800,
+  "green-900":  $green-900,
+));
