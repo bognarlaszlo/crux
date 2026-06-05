@@ -3,6 +3,10 @@
     {
       "namespace": "__main__",
       "path": "web/app/themes/crux/views"
+    },
+    {
+      "namespace": "images",
+      "path": "web/app/themes/crux/public/images"
     }
   ]
 }
