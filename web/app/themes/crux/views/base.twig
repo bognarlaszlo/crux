@@ -1,8 +1,16 @@
+{#
+    @var navbar_theme string
+#}
+
+{% set navbar_theme = navbar_theme|default('light') %}
+
 <!doctype html>
 <html {{ site.language_attributes }}>
 <head>
     <meta charset="{{ site.charset }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ title|default('Crux') }}</title>
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
@@ -11,6 +19,13 @@
     {{ function('wp_head') }}
 </head>
 <body {{ function('body_class') }}>
+    <header class="site-header">
+        {% include 'components/navigation.twig' with { menu: primary_menu, navbar_theme } only %}
+
+        {% block header %}
+        {% endblock %}
+    </header>
+
     {% block content %}{% endblock %}
 
     {% block javascripts %}
