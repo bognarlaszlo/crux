@@ -10,7 +10,7 @@ $figure-image-scale: math.div($figure-pattern-rows - 2, $figure-pattern-rows);
     aspect-ratio: $figure-pattern-ratio;
 
     mask:
-      url('#{$public-images-url}/pattern-x.svg')
+      url('#{$public-images-url}/components/figure/pattern.svg')
       0 0 / #{$figure-pattern-tile-size}
       repeat;
 
