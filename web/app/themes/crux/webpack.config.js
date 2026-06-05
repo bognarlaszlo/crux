@@ -1,13 +1,22 @@
 const Encore = require('@symfony/webpack-encore');
 
+const THEME_PUBLIC_PATH = '/app/themes/crux/public';
+
 Encore
   .setOutputPath('public/build/')
-  .setPublicPath('/app/themes/crux/public/build')
+  .setPublicPath(`${THEME_PUBLIC_PATH}/build`)
 
   .addEntry('app', './assets/app.js')
 
-  .enableStimulusBridge('./assets/controllers.json')
+  .configureCssLoader((options) => {
+    options.url = {
+      filter: (url) => {
+        return !url.startsWith(`${THEME_PUBLIC_PATH}`);
+      },
+    };
+  })
 
+  .enableStimulusBridge('./assets/controllers.json')
   .enableSassLoader((options) => {
     options.sassOptions = {
       quietDeps: true,
