@@ -1,0 +1,17 @@
+@use "sass:map";
+
+$utilities: map.deep-merge(
+  $utilities,
+  (
+    "color": (
+      values: (
+        "currentColor": currentColor,
+      ),
+    ),
+    "background-color": (
+      values: (
+        "currentColor": currentColor,
+      ),
+    ),
+  )
+);

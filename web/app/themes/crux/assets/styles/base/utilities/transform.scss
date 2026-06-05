@@ -1,0 +1,25 @@
+@use 'sass:map';
+
+$utilities: map.deep-merge(
+  $utilities, (
+    "transform-origin": (
+      property: transform-origin,
+      class: origin,
+      values: (
+        null: var(--#{prefix}origin-x, center) var(--#{prefix}origin-y, center),
+
+        center: center,
+
+        start: left,
+        top: top,
+        end: right,
+        bottom: bottom,
+
+        start-top: left top,
+        start-bottom: left bottom,
+        end-top: right top,
+        end-bottom: right bottom,
+      )
+    )
+  )
+);

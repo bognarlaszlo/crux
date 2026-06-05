@@ -1,0 +1,32 @@
+@use "sass:map";
+
+$position-spacing-values: map.merge($position-values, $spacers);
+
+@if $enable-negative-margins {
+  $position-spacing-values: map.merge($position-spacing-values, $negative-spacers);
+}
+
+$utilities: map.deep-merge(
+  $utilities,
+  (
+    "inset": (
+      property: inset,
+      class: inset,
+      values: (
+        0
+      ),
+    ),
+    "top": (
+      values: $position-spacing-values,
+    ),
+    "bottom": (
+      values: $position-spacing-values,
+    ),
+    "start": (
+      values: $position-spacing-values,
+    ),
+    "end": (
+      values: $position-spacing-values,
+    ),
+  )
+);

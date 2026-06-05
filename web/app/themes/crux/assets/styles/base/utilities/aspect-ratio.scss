@@ -1,0 +1,12 @@
+@use "sass:map";
+
+$utilities: map.merge(
+  $utilities,
+  (
+    "aspect-ratio": (
+      property: aspect-ratio,
+      class: aspect-ratio,
+      values: $aspect-ratios-native
+    )
+  )
+);
