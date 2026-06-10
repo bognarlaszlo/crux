@@ -35,6 +35,7 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 2,
   6: $spacer * 3,
+  7: $spacer * 12,
 );
 
 // Body
@@ -86,17 +87,17 @@ $h5-font-size:                1.5rem;     // 24px
 $h6-font-size:                1.25rem;    // 20px
 
 $font-sizes: (
-    1: $h1-font-size,
-    2: $h2-font-size,
-    3: $h3-font-size,
-    4: $h4-font-size,
-    5: $h5-font-size,
-    6: $h6-font-size,
-    7: $font-size-base,
-    8: $font-size-md,
-    9: $font-size-sm,
-    10: $font-size-xs,
-    11: $font-size-xxs,
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  7: $font-size-base,
+  8: $font-size-md,
+  9: $font-size-sm,
+  10: $font-size-xs,
+  11: $font-size-xxs,
 );
 
 $headings-margin-bottom:      0;
@@ -126,10 +127,29 @@ $form-label-font-weight:                600;
 // Navs
 
 // Navbar
+$navbar-padding-y:                  map.get($spacers, 3);
+
 $navbar-nav-link-padding-x:         map.get($spacers, 4);
 
+$navbar-brand-padding-y:            0;
+
+$navbar-toggler-focus-width:        0;
+
 $navbar-light-color:                $primary;
+$navbar-light-brand-color:          $navbar-light-color;
+$navbar-light-brand-hover-color:    $navbar-light-color;
+
+$navbar-light-icon-color:           $primary;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='23' fill='#{$navbar-light-icon-color}'><path d='M0 0h42v3H0zm0 10h42v3H0zm0 10h42v3H0z'/></svg>");
+$navbar-light-toggler-border-color: transparent;
+
 $navbar-dark-color:                 $secondary;
+$navbar-dark-brand-color:           $navbar-dark-color;
+$navbar-dark-brand-hover-color:     $navbar-dark-color;
+
+$navbar-dark-icon-color:            $secondary;
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='23' fill='#{$navbar-dark-icon-color}'><path d='M0 0h42v3H0zm0 10h42v3H0zm0 10h42v3H0z'/></svg>");
+$navbar-dark-toggler-border-color:  transparent;
 
 // Figures
 $figure-pattern-cols:               8;

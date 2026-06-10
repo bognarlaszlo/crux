@@ -19,13 +19,9 @@
     {{ function('wp_head') }}
 </head>
 <body {{ function('body_class') }}>
-    <header class="site-header">
-        {% include 'components/navigation.twig' with { menu: primary_menu, navbar_theme } only %}
+    {% include 'components/navigation.twig' with { menu: primary_menu, navbar_theme } only %}
 
-        {% block header %}
-        {% endblock %}
-    </header>
-
+    {% block header %}{% endblock %}
     {% block content %}{% endblock %}
 
     {% block javascripts %}

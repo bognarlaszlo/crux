@@ -2,21 +2,35 @@
     @var menu Timber\Menu
     @var navbar_theme string
 #}
-
-<nav class="navbar navbar-expand-lg" data-bs-theme="{{ navbar_theme|default('light') }}">
+<div class="sentinel"></div>
+<nav class="navbar position-absolute w-100 navbar-expand-lg" data-bs-theme="{{ navbar_theme|default('light') }}"
+    data-controller="navbar"
+    data-navbar-theme-value="{{ navbar_theme|default('light') }}"
+    data-navbar-visible-class="top-0 bg-white shadow"
+    data-action="
+        show.bs.collapse->navbar#show
+        hide.bs.collapse->navbar#hide
+    "
+>
     <div class="container">
         <a class="navbar-brand" href="/">
             {{ source('@images/logo.svg') }}
         </a>
-        
-        <ul class="navbar-nav">
-            {% for item in menu.items %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ item.link }}">
-                        {{ item.title }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="menu" class="collapse navbar-collapse flex-grow-0 pt-lg-0 pt-3">
+            <ul class="navbar-nav">
+                {% for item in menu.items %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ item.link }}">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </nav>
