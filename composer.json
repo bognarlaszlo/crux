@@ -45,6 +45,7 @@
     "roots/wp-config": "^1.0",
     "symfony/webpack-encore-bundle": "*",
     "timber/timber": "^2.4",
+    "twig/html-extra": "^3.24",
     "vlucas/phpdotenv": "^5.0",
     "wpengine/advanced-custom-fields-pro": "*"
   },

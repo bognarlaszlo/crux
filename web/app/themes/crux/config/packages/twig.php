@@ -2,6 +2,7 @@
 
 use Crux\Twig\AssetExtension;
 use Crux\Twig\EncoreExtension;
+use Twig\Extra\Html\HtmlExtension;
 
 return [
     'paths' => [
@@ -11,6 +12,7 @@ return [
         AssetExtension::class => [],
         EncoreExtension::class => [
             '/public/build/'
-        ]
+        ],
+        HtmlExtension::class => []
     ],
 ];
