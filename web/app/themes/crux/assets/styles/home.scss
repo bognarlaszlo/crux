@@ -1,0 +1,5 @@
+@use "base/variables-crux" as crux;
+
+.site-header {
+  background: no-repeat center / cover url('#{crux.$public-images-url}/home/bg-velvet.png');
+}

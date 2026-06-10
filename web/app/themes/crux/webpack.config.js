@@ -7,6 +7,7 @@ Encore
   .setPublicPath(`${THEME_PUBLIC_PATH}/build`)
 
   .addEntry('app', './assets/app.js')
+  .addEntry('home', './assets/home.js')
 
   .configureCssLoader((options) => {
     options.url = {
