@@ -162,11 +162,18 @@ $card-spacer-x:                     map.get($spacers, 5);
 $card-border-width:                 0;
 $card-border-radius:                var(--#{$prefix}border-radius-lg);
 
+// Badges
+$badge-font-size:                   $font-size-sm;
+$badge-font-weight:                 400;
+$badge-padding-y:                   .5625rem;
+$badge-padding-x:                   .875rem;
+
 // Figures
 $figure-pattern-cols:               8;
 $figure-pattern-rows:               14;
 
 @import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/variables-dark';
 
 $theme-colors: map.merge($theme-colors, (
   "gray-200": $gray-200,
