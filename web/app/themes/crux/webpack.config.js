@@ -1,3 +1,4 @@
+const path = require("path");
 const Encore = require('@symfony/webpack-encore');
 
 const THEME_PUBLIC_PATH = '/app/themes/crux/public';
@@ -5,6 +6,10 @@ const THEME_PUBLIC_PATH = '/app/themes/crux/public';
 Encore
   .setOutputPath('public/build/')
   .setPublicPath(`${THEME_PUBLIC_PATH}/build`)
+
+  .addAliases({
+    '@styles': path.resolve(__dirname, 'assets/styles'),
+  })
 
   .addEntry('app', './assets/app.js')
   .addEntry('home', './assets/home.js')
