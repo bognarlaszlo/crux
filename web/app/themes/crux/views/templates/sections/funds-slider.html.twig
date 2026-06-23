@@ -1,0 +1,26 @@
+<section class="py-7">
+    <div class="container">
+        <div class="vstack align-items-center gap-5">
+            {% include 'components/section-title.html.twig' with { title: 'Befektetési alapok', classes: 'text-center' } only %}
+
+            {% embed 'components/slider.html.twig' with {
+                config: {
+                    "(min-width: 1200px)": {
+                        slidesToShow: 2,
+                    }
+                }
+            } %}
+                {% block items %}
+                    {% for fund in funds %}
+                        {% include 'components/fund-card.html.twig' with { fund } only %}
+                        {% include 'components/fund-card.html.twig' with { fund } only %}
+                        {% include 'components/fund-card.html.twig' with { fund } only %}
+                        {% include 'components/fund-card.html.twig' with { fund } only %}
+                    {% endfor %}
+                {% endblock %}
+            {% endembed %}
+
+            <a href="" class="btn btn-primary">Összes kezelt alap</a>
+        </div>
+    </div>
+</section>

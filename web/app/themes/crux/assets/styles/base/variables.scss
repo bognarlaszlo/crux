@@ -28,6 +28,9 @@ $enable-cssgrid:              true;
 // Prefix for :root CSS variables
 $prefix: bs-;
 
+// Gradient
+$gradient: linear-gradient(180deg, #ffffff 0%, $gray-200 100%);
+
 // Spacing
 $spacer: 1rem;
 $spacers: (
@@ -40,6 +43,7 @@ $spacers: (
   6: $spacer * 3,
   7: $spacer * 4,
   8: $spacer * 5,
+  9: $spacer * 6,
   xxl: $spacer * 12,
 );
 

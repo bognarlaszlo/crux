@@ -1,0 +1,34 @@
+{% set activities = [
+    {
+        icon: 'building-01.svg',
+        title: 'Befektetéskezelés',
+        text: 'Közép- és hosszú távú finanszírozást biztosítunk növekedési potenciállal rendelkező vállalkozások számára.'
+    }, {
+        icon: 'chart.svg',
+        title: 'Kockázatkezelés',
+        text: 'Befektetéseinket strukturált, transzparens kockázatkezelési rendszer mentén kezeljük.'
+    }, {
+        icon: 'building-02.svg',
+        title: 'Alapkezelés',
+        text: 'Alternatív befektetési alapok kezelésével diverzifikált, értékalapú portfóliót építünk.'
+    }
+] %}
+
+<section class="py-9 bg-gradient">
+    <div class="container">
+        <div class="row gy-5 align-items-center justify-content-between">
+            <div class="col-lg-5">
+                {% include 'components/figure.twig' with {
+                    pattern: 'start',
+                    src: asset('images/home/fields_of_activity.png'),
+                    ratio: '453 / 575',
+                    color: 'green-700'
+                } only %}
+            </div>
+            <div class="col-lg-6">
+                {% include 'components/section-title.html.twig' with { title: 'Tevékenységi körünk', classes: 'mb-6' } only %}
+                {% include 'components/icon-list.html.twig' with { list: activities } %}
+            </div>
+        </div>
+    </div>
+</section>

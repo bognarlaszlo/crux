@@ -41,8 +41,9 @@
 {% endblock %}
 
 {% block content %}
-    <main class="container">
-        {% include 'templates/home/metrics.html.twig' %}
-        {% include 'templates/home/funds.html.twig' %}
+    <main>
+        {% include 'templates/sections/company-facts.html.twig' %}
+        {% include 'templates/sections/funds-slider.html.twig' %}
+        {% include 'templates/sections/fields-of-activity.html.twig' %}
     </main>
 {% endblock %}
