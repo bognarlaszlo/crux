@@ -21,14 +21,17 @@ composer-install: ## Composer install
 	docker compose run --rm php composer install
 
 composer-require: ## Composer require
-	docker compose run --rm php composer require $(args)
+	docker compose run --rm php composer require $(pkg)
 
 composer-update: ## Composer update
 	docker compose run --rm php composer update
 
 ## Frontend assets
+npm: ## General NPM commands
+	docker compose run --rm node npm $(cmd)
+
 npm-install: ## Install npm dependencies
-	docker compose run --rm node npm i $(args)
+	docker compose run --rm node npm i $(pkg)
 
 npm-build: ## Build all assets
 	docker compose run --rm node npm run dev
