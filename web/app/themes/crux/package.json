@@ -20,6 +20,7 @@
     "webpack-notifier": "^1.15.0"
   },
   "dependencies": {
+    "blaze-slider": "^1.9.3",
     "bootstrap": "^5.3.8"
   }
 }
