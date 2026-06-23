@@ -1,0 +1,25 @@
+{% set tags = fund.terms({ taxonomy: 'fund_category' }) %}
+{% set properties = fund.meta('crux_group_fund_properties') %}
+
+<div class="card bg-white">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary ff-sans-serif fw-600">{{ fund.title }}</h5>
+
+        <p>{{ fund.excerpt({ read_more: false }) }}</p>
+        <div class="d-flex flex-wrap gap-md-3 gap-2 my-4">
+            {% for tag in tags %}
+                <span class="badge text-primary bg-green-100">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        <ul class="mb-5 fs-9 text-gray-500">
+            <li>Nyilvántartási szám: {{ properties.fund_registration_number }}</li>
+            <li>Működés: {{ properties.fund_term }}</li>
+            <li>Kezelés kezdete: {{ properties.fund_registration_date }}</li>
+        </ul>
+
+        <div class="d-flex flex-wrap gap-md-3 gap-2">
+            <a href="" class="btn btn-primary">Alapadatok</a>
+            <a href="" class="btn btn-outline-primary">Közzétételek</a>
+        </div>
+    </div>
+</div>
