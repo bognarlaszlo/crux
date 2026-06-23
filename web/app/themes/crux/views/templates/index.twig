@@ -7,10 +7,15 @@
     {{ encore_entry_link_tags('home') }}
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+{% endblock %}
+
 {% block header %}
     {% embed 'components/site-header.twig' with { class: ['py-xxl', 'bg-velvet'] } %}
         {% block content %}
-            <div class="row align-items-center justify-content-between h-100">
+            <div class="row gy-5 align-items-center justify-content-between h-100">
                 <div class="col-lg-6 prose text-secondary" style="--prose-flow: 2em;">
                     <h1>
                         <strong>Fenntartható</strong> növekedés. Felelős befektetés.
@@ -38,5 +43,6 @@
 {% block content %}
     <main class="container">
         {% include 'templates/home/metrics.html.twig' %}
+        {% include 'templates/home/funds.html.twig' %}
     </main>
 {% endblock %}
