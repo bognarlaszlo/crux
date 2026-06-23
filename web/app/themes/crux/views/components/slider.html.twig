@@ -1,0 +1,26 @@
+<div class="blaze-slider position-relative w-100" data-controller="blaze-slider" data-blaze-slider-config-value="{{ config|json_encode|e('html_attr') }}">
+    <div class="blaze-container">
+        <div class="blaze-track-container">
+            <div class="blaze-track">
+                {% block items %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center gap-6 mt-4">
+        <button class="blaze-prev btn p-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <path d="M13.8425 25H38V23H13.8425L25.427 11.4155L24 10L10 24L24 38L25.427 36.5845L13.8425 25Z" fill="#13423A"/>
+            </svg>
+        </button>
+
+        <div class="blaze-pagination blaze-dots d-xxl-none"></div>
+
+        <button class="blaze-next btn p-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <path d="M34.1575 25H10V23H34.1575L22.573 11.4155L24 10L38 24L24 38L22.573 36.5845L34.1575 25Z" fill="#13423A"/>
+            </svg>
+        </button>
+    </div>
+</div>

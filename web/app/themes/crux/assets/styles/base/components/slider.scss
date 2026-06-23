@@ -1,0 +1,45 @@
+@use "../bootstrap-api" as bs;
+
+.blaze-slider {
+  position: relative;
+
+  .blaze-dots {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    button {
+      padding: 4px;
+      border: 0;
+      border-radius: 50%;
+      outline: 0;
+      background: var(--bs-primary-bg-subtle);
+      font-size: 0;
+
+      &.active {
+        background: var(--bs-primary);
+      }
+    }
+  }
+
+  @include bs.media-breakpoint-up('xxl') {
+    .blaze-prev,
+    .blaze-next {
+      position: absolute;
+      top: 50%;
+      transform: translate(var(--control-offset), -50%);
+    }
+
+    .blaze-prev {
+      --control-offset: calc(-100% - 20px);
+      left: 0;
+    }
+
+    .blaze-next {
+      --control-offset: calc(100% + 20px);
+      right: 0;
+    }
+  }
+}
