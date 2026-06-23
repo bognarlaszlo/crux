@@ -1,5 +1,5 @@
-@use "base/variables-crux" as crux;
+@use "base/bootstrap-api" as bs;
 
 .site-header {
-  background: no-repeat center / cover url('#{crux.$public-images-url}/home/bg-velvet.png');
+  background: no-repeat center / cover url('#{bs.$public-images-url}/home/bg-velvet.png');
 }

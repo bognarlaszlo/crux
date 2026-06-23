@@ -1,13 +1,8 @@
-@import '~bootstrap/scss/functions';
-
-@import 'variables';
-
-// Configuration
-@import '~bootstrap/scss/maps';
-@import '~bootstrap/scss/mixins';
+@import 'bootstrap-api';
 @import '~bootstrap/scss/utilities';
 
 @import 'utilities';
+@import 'components';
 
 // Layout & components
 @import "~bootstrap/scss/root";
@@ -47,5 +42,3 @@
 
 // Utilities
 @import "~bootstrap/scss/utilities/api";
-
-@import 'components';
