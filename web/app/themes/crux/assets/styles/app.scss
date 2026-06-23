@@ -3,6 +3,10 @@
 
 @import "base/bootstrap";
 
+ol, ul {
+  padding-left: 1rem;
+}
+
 .btn, .form-label {
   text-transform: uppercase;
   letter-spacing: 1.2px;
