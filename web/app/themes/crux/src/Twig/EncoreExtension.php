@@ -2,6 +2,7 @@
 
 namespace Crux\Twig;
 
+use Traversable;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -9,13 +10,15 @@ class EncoreExtension extends AbstractExtension
 {
     private const string ENTRYPOINTS_FILE = 'entrypoints.json';
 
-    private string $entrypointsPath;
     private array $entrypoints;
+
+    private array $renderedAssets = [];
 
     public function __construct(string $outputPath)
     {
-        $this->entrypointsPath = get_template_directory() . rtrim($outputPath, '/') . '/' . self::ENTRYPOINTS_FILE;
-        $this->entrypoints = $this->loadEntryPoints();
+        $this->entrypoints = $this->loadEntryPoints(
+            get_template_directory() . rtrim($outputPath, '/') . '/' . self::ENTRYPOINTS_FILE
+        );
     }
 
     public function getFunctions(): array
@@ -48,29 +51,32 @@ class EncoreExtension extends AbstractExtension
         return implode('', $tags);
     }
 
-    private function loadEntryPoints(): array
+    private function loadEntryPoints(string $entrypointsPath): array
     {
-        if (! file_exists($this->entrypointsPath)) {
+        if (!file_exists($entrypointsPath)) {
             return [];
         }
 
-        $entrypoints = json_decode((string) file_get_contents($this->entrypointsPath), true);
+        $entrypoints = json_decode((string) file_get_contents($entrypointsPath), true);
 
-        if (! is_array($entrypoints) || ! is_array($entrypoints['entrypoints'] ?? null)) {
+        if (!is_array($entrypoints) || !is_array($entrypoints['entrypoints'] ?? null)) {
             return [];
         }
 
         return $entrypoints['entrypoints'];
     }
 
-    private function entrypointAssets(string $entryName, string $entryType): array
+    private function entrypointAssets(string $name, string $type): array
     {
-        $assets = $this->entrypoints[$entryName] ?? null;
+        $assets = $this->entrypoints[$name][$type] ?? null;
 
-        if (! is_array($assets) || ! is_array($assets[$entryType] ?? null)) {
+        if (!is_array($assets)) {
             return [];
         }
 
-        return $assets[$entryType];
+        $files = array_values(array_diff($assets, $this->renderedAssets));
+        array_push($this->renderedAssets, ...$files);
+
+        return $files;
     }
 }
