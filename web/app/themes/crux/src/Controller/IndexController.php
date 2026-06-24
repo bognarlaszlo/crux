@@ -2,12 +2,10 @@
 
 namespace Crux\Controller;
 
-use Timber\Timber;
-
-final class IndexController
+final class IndexController extends Controller
 {
     public static function index(): void
     {
-        Timber::render('templates/index.twig', Timber::context());
+        self::render('templates/index.twig');
     }
 }
