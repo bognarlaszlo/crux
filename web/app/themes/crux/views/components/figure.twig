@@ -2,7 +2,7 @@
 
 <figure class="figure position-relative m-0 aspect-ratio z-0" style="--bs-aspect-ratio: {{ ratio }};">
     {% if pattern in ['start', 'end'] %}
-        <span class="figure-pattern position-absolute top-0 h-100 {{ pattern }}-0 bg-{{ color }} z-n1 {{ color }}" aria-hidden="true"></span>
+        <span class="figure-pattern position-absolute top-0 h-100 {{ pattern }}-0 bg-{{ color }} z-n1" aria-hidden="true"></span>
     {% endif %}
 
     <img src="{{ src }}" alt="{{ alt|default('') }}" class="figure-img d-block w-100 h-100 m-0 object-fit-cover rounded-3 origin-{{ pattern == 'start' ? 'end' : 'start' }}">
