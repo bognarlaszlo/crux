@@ -1,0 +1,15 @@
+<footer class="pt-7 pb-5 bg-primary text-secondary text-center fs-10">
+    <div class="container">
+        {{ source('@images/svg/logo.svg') }}
+
+        <div class="grid w-fit-content mt-10 mx-auto" style="--bs-columns: 3;">
+            {% for link in footer.links %}
+                <a href="{{ link.url }}" class="link-secondary text-decoration-none">{{ link.label }}</a>
+            {% endfor %}
+        </div>
+
+        <hr class="my-5 text-gray-400">
+
+        <span>&copy; {{ 'now'|date('Y') }} {{ footer.copyright }}</span>
+    </div>
+</footer>
