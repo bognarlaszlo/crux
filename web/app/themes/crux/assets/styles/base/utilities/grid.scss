@@ -1,0 +1,22 @@
+@use "sass:map";
+
+@use "../bootstrap-api" as bs;
+
+$grid-columns-values: () !default;
+
+@for $i from 1 through bs.$grid-columns {
+  $grid-columns-values: map.merge($grid-columns-values, ($i: $i));
+}
+
+$utilities: map.deep-merge(
+  $utilities,
+  (
+    "grid-columns": (
+      css-var: true,
+      css-variable-name: columns,
+      class: grid-cols,
+      responsive: true,
+      values: $grid-columns-values
+    )
+  )
+);
