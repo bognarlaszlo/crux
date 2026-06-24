@@ -1,0 +1,13 @@
+@use "sass:map";
+
+$utilities: map.deep-merge(
+  $utilities,
+  (
+    "width": (
+      responsive: true,
+      values: (
+        fit-content: fit-content
+      )
+    ),
+  )
+);
