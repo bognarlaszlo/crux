@@ -1,7 +1,7 @@
 <section class="py-7">
     <div class="container">
         <div class="vstack align-items-center gap-5">
-            {% include 'components/section-title.html.twig' with { title: 'Befektetési alapok', classes: 'text-center' } only %}
+            {% include 'components/section-title.html.twig' with { title: funds_slider.title, classes: 'text-center' } only %}
 
             {% embed 'components/slider.html.twig' with {
                 config: {
@@ -20,7 +20,7 @@
                 {% endblock %}
             {% endembed %}
 
-            <a href="" class="btn btn-primary">Összes kezelt alap</a>
+            <a href="{{ funds_slider.action.url }}" class="btn btn-primary">{{ funds_slider.action.label }}</a>
         </div>
     </div>
 </section>

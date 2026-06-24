@@ -1,0 +1,51 @@
+{% extends "layouts/base.twig" %}
+
+{% set navbar_theme = 'dark' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+{% endblock %}
+
+{% block header %}
+    {% embed 'components/site-header.twig' with { class: ['py-xxl', 'bg-velvet'] } %}
+        {% block content %}
+            <div class="row gy-5 align-items-center justify-content-between h-100">
+                <div class="col-lg-6 prose text-secondary" style="--prose-flow: 2em;">
+                    <h1>
+                        {{ hero.title_html|raw }}
+                    </h1>
+                    <p><strong>{{ hero.lead }}</strong></p>
+                    <p>{{ hero.text }}</p>
+
+                    <div class="hstack gap-3 mt-7">
+                        {% for action in hero.actions %}
+                            <a href="{{ action.url }}" class="{{ action.class }}">{{ action.label }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    {% include 'components/figure.twig' with {
+                        pattern: 'end',
+                        src: asset('images/home/hero.jpg'),
+                        ratio: '453 / 575',
+                        color: 'green-700'
+                    } only %}
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    <main>
+        {% include 'templates/sections/company-facts.html.twig' %}
+        {% include 'templates/sections/funds-slider.html.twig' %}
+        {% include 'templates/sections/fields-of-activity.html.twig' %}
+    </main>
+{% endblock %}

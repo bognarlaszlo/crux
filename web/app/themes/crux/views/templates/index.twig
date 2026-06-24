@@ -1,49 +1,12 @@
 {% extends "layouts/base.twig" %}
 
-{% set navbar_theme = 'dark' %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    {{ encore_entry_link_tags('home') }}
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    {{ encore_entry_script_tags('home') }}
-{% endblock %}
-
-{% block header %}
-    {% embed 'components/site-header.twig' with { class: ['py-xxl', 'bg-velvet'] } %}
-        {% block content %}
-            <div class="row gy-5 align-items-center justify-content-between h-100">
-                <div class="col-lg-6 prose text-secondary" style="--prose-flow: 2em;">
-                    <h1>
-                        <strong>Fenntartható</strong> növekedés. Felelős befektetés.
-                    </h1>
-                    <p><strong>A Crux Tőkealap-kezelő Zrt. magán,- és kockázati tőkealapok kezelésével foglalkozik.</strong></p>
-                    <p>Tevékenységünk célja, hogy közép- és hosszú távú finanszírozást biztosítsunk nagy növekedési potenciállal rendelkező vállalkozások számára, miközben befektetőink számára stabil, értékalapú portfóliót építünk. Az alapkezelő működését a szakmai megalapozottság, az átláthatóság és a felelős működés elvei határozzák meg.</p>
-                    <div class="hstack gap-3 mt-7">
-                        <a href="" class="btn btn-secondary">Kezelt alapok megtekintése</a>
-                        <a href="" class="btn btn-outline-secondary">Rólunk</a>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    {% include 'components/figure.twig' with {
-                        pattern: 'end',
-                        src: asset('images/home/hero.jpg'),
-                        ratio: '453 / 575',
-                        color: 'green-700'
-                    } only %}
-                </div>
-            </div>
-        {% endblock %}
-    {% endembed %}
-{% endblock %}
-
 {% block content %}
-    <main>
-        {% include 'templates/sections/company-facts.html.twig' %}
-        {% include 'templates/sections/funds-slider.html.twig' %}
-        {% include 'templates/sections/fields-of-activity.html.twig' %}
+    <main class="py-7">
+        <div class="container">
+            {% if post %}
+                <h1 class="mb-5 text-primary">{{ post.title }}</h1>
+                {{ post.content }}
+            {% endif %}
+        </div>
     </main>
 {% endblock %}

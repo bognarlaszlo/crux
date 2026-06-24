@@ -1,11 +1,5 @@
 <?php
 
-use Timber\Timber;
+use Crux\Controller\IndexController;
 
-$context = Timber::context();
-
-$context['funds'] = Timber::get_posts([
-    'post_type' => 'fund',
-]);
-
-Timber::render('templates/index.twig', $context);
+IndexController::index();
