@@ -23,7 +23,7 @@
                     <p><strong>{{ hero.lead }}</strong></p>
                     <p>{{ hero.text }}</p>
 
-                    <div class="hstack gap-3 mt-7">
+                    <div class="hstack flex-wrap gap-3 mt-7">
                         {% for action in hero.actions %}
                             <a href="{{ action.url }}" class="{{ action.class }}">{{ action.label }}</a>
                         {% endfor %}
