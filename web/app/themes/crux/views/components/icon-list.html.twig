@@ -2,7 +2,7 @@
     {% for item in list %}
         <li class="d-flex align-items-start gap-5">
             <div class="d-inline-flex p-3 rounded-circle text-primary bg-green-200">
-                {{ source('@images/svg/' ~ item.icon) }}
+                {% include 'components/svg.html.twig' with { name: item.icon } only %}
             </div>
 
             <div class="py-2">

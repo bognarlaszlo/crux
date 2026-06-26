@@ -14,7 +14,7 @@
 >
     <div class="container">
         <a class="navbar-brand" href="/">
-            {{ source('@images/svg/logo.svg') }}
+            {% include 'components/svg.html.twig' with { name: 'logo', attributes: { width: 178, height: 72 } } only %}
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">

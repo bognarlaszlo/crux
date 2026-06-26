@@ -1,0 +1,10 @@
+{% set attributes = {
+    width: 20,
+    height: 20,
+    focusable: 'false',
+}|merge(attributes|default({})) %}
+{% set symbol = name|replace({'.svg': ''}) %}
+
+<svg {{ html_attr(attributes) }}>
+    <use href="{{ asset('images/svg/' ~ symbol ~ '.svg') }}"></use>
+</svg>

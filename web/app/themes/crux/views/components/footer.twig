@@ -1,6 +1,6 @@
 <footer class="pt-7 pb-5 bg-primary text-secondary text-center fs-10">
     <div class="container">
-        {{ source('@images/svg/logo.svg') }}
+        {% include 'components/svg.html.twig' with { name: 'logo', attributes: { width: 178, height: 72 } } only %}
 
         <div class="grid grid-cols-1 grid-cols-md-3 w-fit-content mt-10 mx-auto">
             {% for link in footer.links %}
