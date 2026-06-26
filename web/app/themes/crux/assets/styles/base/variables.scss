@@ -30,6 +30,12 @@ $prefix: bs-;
 
 // Gradient
 $gradient: linear-gradient(180deg, #ffffff 0%, $gray-200 100%);
+$gradient-green: linear-gradient(0deg, #dcddcb 0%, #e5e6da 100%);
+
+$gradients: (
+  gradient: $gradient,
+  gradient-green: $gradient-green,
+);
 
 // Spacing
 $spacer: 1rem;

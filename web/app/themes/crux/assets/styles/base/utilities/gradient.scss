@@ -1,0 +1,18 @@
+@use "sass:map";
+
+@use "../bootstrap-api" as bs;
+
+:root {
+  @each $name, $gradient in bs.$gradients {
+    --#{bs.$prefix}#{$name}: #{$gradient};
+  }
+}
+
+$utilities: map.deep-merge(
+  $utilities,
+  (
+    "gradient": (
+      values: bs.$gradients
+    ),
+  )
+);
