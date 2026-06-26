@@ -8,6 +8,7 @@ final class GlobalContent
     {
         return [
             'footer' => self::footer(),
+            'sustainability' => self::sustainability(),
         ];
     }
 
@@ -27,6 +28,19 @@ final class GlobalContent
                 ],
             ],
             'copyright' => 'CRUX Tőkealap-Kezelő',
+        ];
+    }
+
+    private static function sustainability(): array
+    {
+        return [
+            'title' => 'A fenntarthatóság számunkra nem különálló cél, hanem a működésünk alapja.',
+            'subtitle' => 'Fenntarthatósági jelentések',
+            'text' => 'Tekintse meg legfrissebb közzétételeinket.',
+            'button' => [
+                'label' => 'Közzétételek',
+                'url' => '#',
+            ],
         ];
     }
 }
