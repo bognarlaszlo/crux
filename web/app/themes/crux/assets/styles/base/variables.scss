@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:list";
 @use "sass:map";
 
@@ -6,6 +7,7 @@
 $public-images-url: crux.$public-images-url;
 
 // Color system
+$white:    #ffffff;
 $gray-200: #eeece7;
 $gray-300: #d6d4ce;
 $gray-400: #b5b4b2;
@@ -14,6 +16,8 @@ $gray-900: #323232;
 
 $green-100: #dfe5db;
 $green-200: #d4e7e1;
+$green-300: #dcddcb;
+$green-400: #e5e6da;
 $green-700: #5d847e;
 $green-800: #2d5a51;
 $green-900: #13423a;
@@ -29,12 +33,14 @@ $enable-cssgrid:              true;
 $prefix: bs-;
 
 // Gradient
-$gradient: linear-gradient(180deg, #ffffff 0%, $gray-200 100%);
-$gradient-green: linear-gradient(0deg, #dcddcb 0%, #e5e6da 100%);
+$gradient: linear-gradient(180deg, $white 0%, $gray-200 100%);
+$gradient-green: linear-gradient(0deg, $green-300 0%, $green-400 100%);
+$gradient-white: linear-gradient(180deg, $white 0%, transparent 100%);
 
 $gradients: (
   gradient: $gradient,
   gradient-green: $gradient-green,
+  gradient-white: $gradient-white,
 );
 
 // Spacing

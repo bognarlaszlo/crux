@@ -7,8 +7,29 @@ final class GlobalContent
     public static function all(): array
     {
         return [
+            'contact' => self::contact(),
             'footer' => self::footer(),
             'sustainability' => self::sustainability(),
+        ];
+    }
+
+    private static function contact(): array
+    {
+        return [
+            'title' => 'Kérdése van?',
+            'subtitle' => 'Állunk rendelkezésére.',
+            'email' => [
+                'label' => 'info@cruxventures.hu',
+                'url' => 'mailto:info@cruxventures.hu',
+            ],
+            'phone' => [
+                'label' => '+36 1 220 2356',
+                'url' => 'tel:+3612202356',
+            ],
+            'action' => [
+                'label' => 'Kapcsolat',
+                'url' => '',
+            ],
         ];
     }
 
