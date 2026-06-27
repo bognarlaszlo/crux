@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block header %}
-    {% embed 'components/site-header.twig' with { class: ['py-xxl', 'bg-velvet'] } %}
+    {% embed 'components/site-header.twig' with { class: ['py-xxl'] } %}
         {% block content %}
             <div class="row gy-5 align-items-center justify-content-between h-100">
                 <div class="col-lg-6 prose text-secondary" style="--prose-flow: 2em;">
@@ -32,7 +32,7 @@
                 <div class="col-lg-5">
                     {% include 'components/figure.twig' with {
                         pattern: 'end',
-                        src: asset('images/home/hero.jpg'),
+                        src: asset('images/architecture/interior-01.jpg'),
                         ratio: '453 / 575',
                         color: 'green-700'
                     } only %}
