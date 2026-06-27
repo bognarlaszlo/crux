@@ -28,7 +28,7 @@ final class GlobalContent
             ],
             'action' => [
                 'label' => 'Kapcsolat',
-                'url' => '',
+                'url' => '/kapcsolat',
             ],
         ];
     }
