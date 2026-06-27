@@ -1,0 +1,11 @@
+@use "base/bootstrap-api" as bs;
+
+.site-header {
+  background:
+          //linear-gradient(
+          //    90deg,
+          //    bs.$secondary 40%,
+          //    rgba(#13423A, 0) 80%
+          //),
+          no-repeat bottom right / contain url('#{bs.$public-images-url}/architecture/exterior-02.png');
+}

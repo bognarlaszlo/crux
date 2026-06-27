@@ -1,0 +1,35 @@
+{% extends 'layouts/base.twig' %}
+
+{% set title = post.title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('about') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('about') }}
+{% endblock %}
+
+{% block header %}
+    {% embed 'components/site-header.twig' with { class: [] } %}
+        {% block content %}
+            <div class="row gy-5 align-items-end justify-content-between">
+                <div class="col-lg-5 prose text-primary">
+                    <h1>
+                        <strong>A Crux</strong> szemlélete
+                    </h1>
+                    {% if post.content %}
+                        <p>{{ post.content }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    <main>
+    </main>
+{% endblock %}

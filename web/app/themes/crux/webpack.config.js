@@ -13,6 +13,7 @@ Encore
 
   .addEntry('app', './assets/app.js')
   .addEntry('home', './assets/home.js')
+  .addEntry('about', './assets/about.js')
 
   .configureCssLoader((options) => {
     options.url = {
