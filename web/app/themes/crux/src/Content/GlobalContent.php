@@ -58,7 +58,7 @@ final class GlobalContent
             'title' => 'A fenntarthatóság számunkra nem különálló cél, hanem a működésünk alapja.',
             'subtitle' => 'Fenntarthatósági jelentések',
             'text' => 'Tekintse meg legfrissebb közzétételeinket.',
-            'button' => [
+            'action' => [
                 'label' => 'Közzétételek',
                 'url' => '#',
             ],
