@@ -9,6 +9,9 @@ $position-spacing-values: map.merge($position-values, $spacers);
 $utilities: map.deep-merge(
   $utilities,
   (
+    "position": (
+      responsive: true,
+    ),
     "inset": (
       property: inset,
       class: inset,

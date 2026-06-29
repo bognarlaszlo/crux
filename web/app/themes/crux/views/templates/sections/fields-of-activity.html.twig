@@ -1,4 +1,4 @@
-<section class="py-10 bg-gradient">
+<section {{ html_attr({ class }) }}>
     <div class="container">
         <div class="row gy-5 align-items-center justify-content-between">
             <div class="col-lg-5">
@@ -14,6 +14,5 @@
                 {% include 'components/icon-list.html.twig' with { list: activities.items } %}
             </div>
         </div>
-        {% include 'components/sustainability-card.html.twig' %}
     </div>
 </section>

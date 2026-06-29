@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block header %}
-    {% embed 'components/site-header.twig' with { class: ['py-xxl'] } %}
+    {% embed 'components/site-header.twig' with { class: ['py-xl'] } %}
         {% block content %}
             <div class="row gy-5 align-items-center justify-content-between h-100">
                 <div class="col-lg-6 prose text-secondary" style="--prose-flow: 2em;">
@@ -44,9 +44,10 @@
 
 {% block content %}
     <main>
-        {% include 'templates/sections/company-facts.html.twig' %}
+        {% include 'templates/sections/company-facts.html.twig' with { class: ['mt-n8'] } %}
         {% include 'templates/sections/funds-slider.html.twig' %}
-        {% include 'templates/sections/fields-of-activity.html.twig' %}
+        {% include 'templates/sections/fields-of-activity.html.twig' with { class: ['pt-9', 'pb-7', 'bg-gradient'] } %}
+        {% include 'templates/sections/sustainability.html.twig' with { class: ['mb-6', 'pb-10'] } %}
         {% include 'templates/sections/contact-us.html.twig' %}
     </main>
 {% endblock %}
