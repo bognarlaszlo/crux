@@ -8,9 +8,7 @@ final class FrontPageContent
     {
         return [
             'hero' => self::hero(),
-            'metrics' => self::metrics(),
             'funds_slider' => self::fundsSlider(),
-            'activities' => self::activities(),
         ];
     }
 
@@ -34,25 +32,6 @@ final class FrontPageContent
         ];
     }
 
-    private static function metrics(): array
-    {
-        return [
-            [
-                'title' => 'Alapítás',
-                'value' => '2021',
-            ], [
-                'title' => 'Tevékenység',
-                'value' => 'Kollektív portfóliókezelés',
-            ], [
-                'title' => 'Szövetségi tagság',
-                'value' => 'BAMOSZ',
-            ], [
-                'title' => 'MNB engedély',
-                'value' => '2022',
-            ],
-        ];
-    }
-
     private static function fundsSlider(): array
     {
         return [
@@ -60,28 +39,6 @@ final class FrontPageContent
             'action' => [
                 'label' => 'Összes kezelt alap',
                 'url' => '',
-            ],
-        ];
-    }
-
-    private static function activities(): array
-    {
-        return [
-            'title' => 'Tevékenységi körünk',
-            'items' => [
-                [
-                    'icon' => 'building-01.svg',
-                    'title' => 'Befektetéskezelés',
-                    'text' => 'Közép- és hosszú távú finanszírozást biztosítunk növekedési potenciállal rendelkező vállalkozások számára.',
-                ], [
-                    'icon' => 'chart.svg',
-                    'title' => 'Kockázatkezelés',
-                    'text' => 'Befektetéseinket strukturált, transzparens kockázatkezelési rendszer mentén kezeljük.',
-                ], [
-                    'icon' => 'building-02.svg',
-                    'title' => 'Alapkezelés',
-                    'text' => 'Alternatív befektetési alapok kezelésével diverzifikált, értékalapú portfóliót építünk.',
-                ],
             ],
         ];
     }

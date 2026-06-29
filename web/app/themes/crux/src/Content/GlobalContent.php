@@ -7,9 +7,33 @@ final class GlobalContent
     public static function all(): array
     {
         return [
+            'activities' => self::activities(),
             'contact' => self::contact(),
             'footer' => self::footer(),
+            'metrics' => self::metrics(),
             'sustainability' => self::sustainability(),
+        ];
+    }
+
+    private static function activities(): array
+    {
+        return [
+            'title' => 'Tevékenységi körünk',
+            'items' => [
+                [
+                    'icon' => 'building-01.svg',
+                    'title' => 'Befektetéskezelés',
+                    'text' => 'Közép- és hosszú távú finanszírozást biztosítunk növekedési potenciállal rendelkező vállalkozások számára.',
+                ], [
+                    'icon' => 'chart.svg',
+                    'title' => 'Kockázatkezelés',
+                    'text' => 'Befektetéseinket strukturált, transzparens kockázatkezelési rendszer mentén kezeljük.',
+                ], [
+                    'icon' => 'building-02.svg',
+                    'title' => 'Alapkezelés',
+                    'text' => 'Alternatív befektetési alapok kezelésével diverzifikált, értékalapú portfóliót építünk.',
+                ],
+            ],
         ];
     }
 
@@ -49,6 +73,25 @@ final class GlobalContent
                 ],
             ],
             'copyright' => 'CRUX Tőkealap-Kezelő',
+        ];
+    }
+
+    private static function metrics(): array
+    {
+        return [
+            [
+                'title' => 'Alapítás',
+                'value' => '2021',
+            ], [
+                'title' => 'Tevékenység',
+                'value' => 'Kollektív portfóliókezelés',
+            ], [
+                'title' => 'Szövetségi tagság',
+                'value' => 'BAMOSZ',
+            ], [
+                'title' => 'MNB engedély',
+                'value' => '2022',
+            ],
         ];
     }
 
