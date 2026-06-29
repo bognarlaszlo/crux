@@ -98,12 +98,30 @@ final class GlobalContent
     private static function sustainability(): array
     {
         return [
-            'title' => 'A fenntarthatóság számunkra nem különálló cél, hanem a működésünk alapja.',
-            'subtitle' => 'Fenntarthatósági jelentések',
-            'text' => 'Tekintse meg legfrissebb közzétételeinket.',
-            'action' => [
-                'label' => 'Közzétételek',
-                'url' => '#',
+            'title' => 'Fenntarthatósági gyakorlatunk',
+            'items' => [
+                [
+                    'icon' => 'building-01.svg',
+                    'title' => 'ESG szempontok integrálása ',
+                    'text' => 'A befektetési döntések során figyelembe vesszük az ESG (Environmental, Social, Governance) szempontokat.',
+                ], [
+                    'icon' => 'chart.svg',
+                    'title' => 'Portfólió monitorozás ',
+                    'text' => 'Nyomon követjük portfólióvállalataink fenntarthatósági teljesítményét, és szükség esetén beavatkozunk.',
+                ], [
+                    'icon' => 'building-02.svg',
+                    'title' => 'Jelentések és közzétételek',
+                    'text' => 'A fenntarthatósággal kapcsolatos releváns információkat és jelentéseket rendszeresen publikáljuk.',
+                ],
+            ],
+            'card' => [
+                'title' => 'A fenntarthatóság számunkra nem különálló cél, hanem a működésünk alapja.',
+                'subtitle' => 'Fenntarthatósági jelentések',
+                'text' => 'Tekintse meg legfrissebb közzétételeinket.',
+                'action' => [
+                    'label' => 'Közzétételek',
+                    'url' => '#',
+                ],
             ],
         ];
     }
