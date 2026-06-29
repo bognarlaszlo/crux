@@ -1,11 +1,15 @@
 @use "base/bootstrap-api" as bs;
 
 .site-header {
+  --site-header-image:url("#{bs.$public-images-url}/architecture/exterior-02.png");
+
   background:
-          //linear-gradient(
-          //    90deg,
-          //    bs.$secondary 40%,
-          //    rgba(#13423A, 0) 80%
-          //),
-          no-repeat bottom right / contain url('#{bs.$public-images-url}/architecture/exterior-02.png');
+      linear-gradient(to right, bs.$body-bg 30%, rgba(bs.$body-bg, .8) 100%),
+      no-repeat bottom right / cover var(--site-header-image);
+
+  @include bs.media-breakpoint-up(lg) {
+    background:
+      linear-gradient(to right, bs.$body-bg 0%, rgba(bs.$body-bg, .9) 40%, rgba(bs.$body-bg, 0) 80%),
+      no-repeat bottom right / contain var(--site-header-image);
+  }
 }
