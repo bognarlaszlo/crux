@@ -29,5 +29,7 @@
 
 {% block content %}
     <main>
+        {% include 'templates/sections/company-facts.html.twig' with { class: ['py-7'] } %}
+        {% include 'templates/sections/fields-of-activity.html.twig' with { class: ['pb-11'] } %}
     </main>
 {% endblock %}
