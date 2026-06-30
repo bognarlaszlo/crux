@@ -2,10 +2,14 @@
 
 namespace Crux\Controller;
 
-final class AboutUsPageController extends Controller
+use Crux\Content\AboutPageContent;
+
+final class AboutUsPageController extends AbstractController
 {
     public static function index(): void
     {
-        self::render('templates/about-us-page.twig');
+        self::render('templates/about-us-page.twig', [
+            AboutPageContent::all()
+        ]);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Crux\Controller;
 
-final class IndexController extends Controller
+final class IndexController extends AbstractController
 {
     public static function index(): void
     {
