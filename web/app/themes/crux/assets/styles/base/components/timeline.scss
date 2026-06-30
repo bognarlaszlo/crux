@@ -1,0 +1,45 @@
+.list-timeline {
+  --dot: 1rem;
+  --offset: calc((1lh - var(--dot)) / 2);
+  --color: var(--bs-primary);
+
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+
+    &::before {
+      content: "";
+      flex: 0 0 var(--dot);
+      aspect-ratio: 1;
+      margin-top: var(--offset);
+      border: 1px solid var(--color);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(var(--offset) + var(--dot));
+      bottom: calc(var(--offset) * -1);
+      left: calc(var(--dot) / 2);
+      width: 1px;
+      background: var(--color);
+      translate: -50%;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+
+      &::after {
+        background: linear-gradient(var(--color), transparent);
+      }
+    }
+  }
+}
