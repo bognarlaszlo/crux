@@ -1,0 +1,48 @@
+{% set name = member.title %}
+{% set position = member.meta('crux_field_board_member_position') %}
+{% set name_parts = name|split(' ', 2) %}
+{% set offcanvas_id = 'member-' ~ member.id %}
+
+<article class="card h-100 rounded-4 overflow-hidden">
+    <div class="pile mb-n6">
+        <img src="{{ asset('images/svg/circle.svg') }}" width="215" height="215" alt="">
+        <span class="display-1 text-primary">
+            {{ name|initials }}
+        </span>
+    </div>
+    <div class="card-body pt-0 bg-gradient-inverse fs-8 text-center">
+        <h3 class="ff-sans-serif fw-400 text-primary">{{ name }}</h3>
+        <p class="text-uppercase">{{ position }}</p>
+        <p class="my-6">{{ member.excerpt({ read_more: false }) }}</p>
+
+        <button
+            type="button"
+            class="btn btn-outline-primary"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#{{ offcanvas_id }}"
+            aria-controls="{{ offcanvas_id }}"
+        >
+            Részletek
+        </button>
+    </div>
+</article>
+
+{% embed 'components/offcanvas.html.twig' with {
+    id: offcanvas_id,
+    name,
+    position,
+    content: member.content,
+} only %}
+    {% block header %}
+        <div class="vstack">
+            <h4 id="{{ id }}-label" class="h1">
+                {{ '<strong>%s</strong> %s'|format(...(name|split(' ', 2)|merge(['']))) }}
+            </h4>
+            <p class="fs-8 text-uppercase">{{ position }}</p>
+        </div>
+    {% endblock %}
+
+    {% block body %}
+        {{ content }}
+    {% endblock %}
+{% endembed %}
