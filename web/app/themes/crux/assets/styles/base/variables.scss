@@ -33,14 +33,16 @@ $enable-cssgrid:              true;
 $prefix: bs-;
 
 // Gradient
-$gradient: linear-gradient(180deg, $white 0%, $gray-200 100%);
+$gradient: linear-gradient($white 0%, transparent 100%);
+$gradient-horizontal: linear-gradient(90deg, transparent 0%, $white 100%);
+$gradient-inverse: linear-gradient(transparent 0%, $white 100%);
 $gradient-green: linear-gradient(0deg, $green-300 0%, $green-400 100%);
-$gradient-white: linear-gradient(180deg, $white 0%, transparent 100%);
 
 $gradients: (
   gradient: $gradient,
+  gradient-horizontal: $gradient-horizontal,
+  gradient-inverse: $gradient-inverse,
   gradient-green: $gradient-green,
-  gradient-white: $gradient-white,
 );
 
 // Spacing
@@ -127,6 +129,13 @@ $font-sizes: (
 $headings-margin-bottom:      0;
 $headings-font-family:        $font-family-serif;
 $headings-font-weight:        300;
+$headings-color:              $green-800;
+
+$display-font-sizes: (
+  1: 5.25rem,
+);
+
+$display-font-family:         $font-family-serif;
 
 $hr-opacity:                  1;
 
@@ -204,6 +213,22 @@ $badge-font-size:                   $font-size-sm;
 $badge-font-weight:                 400;
 $badge-padding-y:                   .5625rem;
 $badge-padding-x:                   .875rem;
+
+// Close
+$btn-close-width:                   4em;
+$btn-close-color:                   $primary;
+$btn-close-bg:                      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' fill='#{$btn-close-color}'><path fill-rule='evenodd' d='M40 0a40 40 0 1 1 0 80 40 40 0 1 1 0-80Zm0 1a39 39 0 1 0 0 78 39 39 0 1 0 0-78Z'/><path d='M25 25.707l.707-.707 28.687 28.687-.707.707z'/><path d='M54.293 25l.707.707-28.687 28.687-.707-.707z'/></svg>");
+$btn-close-opacity:                 1;
+$btn-close-hover-opacity:           1;
+
+// Offcanvas
+$offcanvas-padding-y:               9.5%;
+$offcanvas-padding-x:               9.5%;
+$offcanvas-horizontal-width:        min(100vw, 70rem);
+$offcanvas-transition-duration:     .2s;
+$offcanvas-border-width:            0;
+$offcanvas-backdrop-bg:             $secondary;
+$offcanvas-backdrop-opacity:        .8;
 
 // Figures
 $figure-pattern-cols:               8;

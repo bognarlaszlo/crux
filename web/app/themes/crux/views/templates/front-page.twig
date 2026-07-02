@@ -16,8 +16,8 @@
     {% embed 'components/site-header.twig' with { class: ['py-xl'] } %}
         {% block content %}
             <div class="row gy-5 align-items-center justify-content-between h-100">
-                <div class="col-lg-6 prose text-secondary" style="--prose-flow: 2em;">
-                    <h1>
+                <div class="col-lg-6 prose text-white" style="--prose-flow: 2em;">
+                    <h1 class="text-secondary">
                         {{ hero.title|raw }}
                     </h1>
                     <p><strong>{{ hero.lead }}</strong></p>

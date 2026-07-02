@@ -1,9 +1,9 @@
 <section>
     <div class="container">
-        <div class="card p-5 p-md-7 bg-gradient-white">
+        <div class="card p-5 p-md-7 bg-gradient">
             <div class="row gy-3 gx-8">
                 <div class="col-lg-auto">
-                    <h2 class="h1 text-primary">{{ timeline.title }}</h2>
+                    {% include 'components/section-title.html.twig' with { title: timeline.title } %}
                 </div>
                 <div class="col-lg">
                     <ul class="list-timeline mb-0">
