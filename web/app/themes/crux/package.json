@@ -17,6 +17,8 @@
     "postcss-loader": "^8.2.1",
     "sass": "^1.100.0",
     "sass-loader": "^16.0.8",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0",
     "webpack-notifier": "^1.15.0"
   },
   "dependencies": {
