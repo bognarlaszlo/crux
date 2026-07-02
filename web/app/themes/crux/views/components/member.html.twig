@@ -11,19 +11,21 @@
         </span>
     </div>
     <div class="card-body pt-0 bg-gradient-inverse fs-8 text-center">
-        <h3 class="ff-sans-serif fw-400 text-primary">{{ name }}</h3>
-        <p class="text-uppercase">{{ position }}</p>
-        <p class="my-6">{{ member.excerpt({ read_more: false }) }}</p>
+        <div class="vstack align-items-center h-100">
+            <h3 class="ff-sans-serif fw-400 text-primary">{{ name }}</h3>
+            <p class="text-uppercase">{{ position }}</p>
+            <p class="my-6">{{ member.excerpt({ read_more: false }) }}</p>
 
-        <button
-            type="button"
-            class="btn btn-outline-primary"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#{{ offcanvas_id }}"
-            aria-controls="{{ offcanvas_id }}"
-        >
-            Részletek
-        </button>
+            <button
+                type="button"
+                class="btn btn-outline-primary mt-auto"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#{{ offcanvas_id }}"
+                aria-controls="{{ offcanvas_id }}"
+            >
+                Részletek
+            </button>
+        </div>
     </div>
 </article>
 

@@ -2,7 +2,7 @@
     <div class="container">
         {% include 'components/section-title.html.twig' with { title: 'Igazgatóság', classes: 'mb-7 text-center' } only %}
 
-        <div class="row row-cols-lg-3 justify-content-center g-5">
+        <div class="row row-cols-lg-3 row-cols-1 justify-content-center g-5">
             {% for member in board %}
                 <div class="col">
                     {% include 'components/member.html.twig' with { member } only %}

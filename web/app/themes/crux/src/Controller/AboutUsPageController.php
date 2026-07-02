@@ -14,7 +14,7 @@ final class AboutUsPageController extends AbstractController
             AboutPageContent::all(),
             [
                 'board' => self::board(),
-            ]
+            ],
         ]);
     }
 
@@ -22,6 +22,8 @@ final class AboutUsPageController extends AbstractController
     {
         return Timber::get_posts([
             'post_type' => 'board',
+            'orderby' => 'date',
+            'order' => 'ASC',
         ]);
     }
 }
