@@ -2,6 +2,7 @@
 
 use Crux\Twig\AssetExtension;
 use Crux\Twig\EncoreExtension;
+use Crux\Twig\InitialsExtension;
 use Twig\Extra\Html\HtmlExtension;
 
 return [
@@ -11,8 +12,9 @@ return [
     'extensions' => [
         AssetExtension::class => [],
         EncoreExtension::class => [
-            '/public/build/'
+            '/public/build/',
         ],
-        HtmlExtension::class => []
+        InitialsExtension::class => [],
+        HtmlExtension::class => [],
     ],
 ];
